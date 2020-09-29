@@ -1,4 +1,6 @@
+import {Message} from 'element-ui'
 import axios from '@/http/axios'
+
 
 export default{
     namespaced:true,
@@ -32,6 +34,18 @@ export default{
                     dispatch("queryCat",{page:0,pageSize:3})
                 }
             })
+        },
+        delById({dispatch},id){
+            axios.get("/category/deleteById?id="+id).then(res=>{
+                Message({
+                    message:res.data.message,
+                    type:"success"
+                })
+                dispatch("queryCat",{page:0,pageSize:3})
+            })
+        },
+        delAllCat({dispatch},ids){
+            axios.post("")
         }
     },
 }

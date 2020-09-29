@@ -46,7 +46,7 @@ export default {
           alert("更新成功")
           dispatch("queryCustomer",{page:0,pageSize:3})
         }
-       
+        
 
       })
     },
